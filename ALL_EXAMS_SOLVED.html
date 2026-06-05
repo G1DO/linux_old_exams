@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f6f63">
 <title>Embedded Linux — Final Exams, Solved &amp; Explained</title>
 <style>
 :root{
@@ -18,18 +19,22 @@
  --measure:74ch;
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);
- font-size:18px;line-height:1.72;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
- font-feature-settings:"liga" 1,"kern" 1;}
+ font-size:18px;line-height:1.72;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+ text-rendering:optimizeLegibility;font-feature-settings:"liga" 1,"kern" 1;}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.022;
  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
  background:linear-gradient(90deg,var(--accent),var(--ans-bar));transition:width .12s ease-out;}
-.fab{position:fixed;right:20px;bottom:20px;z-index:50;width:46px;height:46px;border-radius:50%;
+.fab{position:fixed;right:18px;bottom:18px;z-index:50;width:48px;height:48px;border-radius:50%;
  background:var(--accent);color:#fff;display:none;align-items:center;justify-content:center;
- text-decoration:none;font-size:1.25rem;box-shadow:0 8px 22px -6px rgba(15,111,99,.6);opacity:.9;}
-.fab:hover{opacity:1;transform:translateY(-2px);}
+ text-decoration:none;font-size:1.3rem;box-shadow:0 8px 22px -6px rgba(15,111,99,.6);opacity:.92;}
+.fab:hover,.fab:active{opacity:1;}
+/* mobile top nav (hidden on desktop) */
+.mnav{display:none;}
+.mnav>summary{cursor:pointer;list-style:none;}
+.mnav>summary::-webkit-details-marker{display:none;}
 .layout{position:relative;z-index:1;display:flex;gap:36px;max-width:1210px;margin:0 auto;padding:0 26px 70px;}
 .sidenav{flex:0 0 246px;align-self:flex-start;position:sticky;top:0;max-height:100vh;
  padding:32px 6px 28px 2px;overflow-y:auto;}
@@ -55,60 +60,60 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
  box-shadow:0 1px 2px rgba(60,45,15,.05),0 22px 50px -34px rgba(60,45,15,.30);}
 .content>*:first-child{margin-top:0;}
 h1{font-family:var(--font-head);font-size:2.35rem;line-height:1.1;font-weight:700;letter-spacing:-.01em;
- color:var(--ink);margin:.05em 0 .55em;position:relative;padding-bottom:.42em;}
+ color:var(--ink);margin:.05em 0 .55em;position:relative;padding-bottom:.42em;overflow-wrap:break-word;}
 h1::after{content:"";position:absolute;left:0;bottom:0;width:92px;height:4px;border-radius:2px;background:var(--accent);}
 h2{font-family:var(--font-head);font-size:1.55rem;font-weight:700;color:#fff;letter-spacing:.004em;
- margin:3em 0 .2em;padding:18px 22px;border-radius:13px;scroll-margin-top:16px;
+ margin:3em 0 .2em;padding:18px 22px;border-radius:13px;scroll-margin-top:16px;overflow-wrap:break-word;
  background:linear-gradient(118deg,var(--accent-deep),var(--accent));
  box-shadow:0 14px 30px -18px rgba(10,77,69,.75);}
 h3{font-family:var(--font-body);font-weight:700;}
 h3.qhead{font-size:1.14rem;line-height:1.45;color:var(--ink);margin:2.4em 0 .5em;padding:0 0 12px;
- border-bottom:2px solid var(--accent-tint);scroll-margin-top:16px;}
+ border-bottom:2px solid var(--accent-tint);scroll-margin-top:16px;overflow-wrap:break-word;}
 h3.qhead:target{background:linear-gradient(90deg,var(--accent-tint),transparent 75%);
  border-radius:8px 8px 0 0;padding:8px 12px 12px;margin-left:-12px;}
 .qnum{font-family:var(--font-head);font-size:.72rem;font-weight:700;letter-spacing:.03em;color:#fff;
  background:var(--accent);padding:3px 9px;border-radius:6px;margin-right:10px;vertical-align:.16em;white-space:nowrap;}
-p{margin:.72em 0;max-width:var(--measure);}
-a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:2px;text-decoration-color:#aed3cb;}
+p{margin:.72em 0;max-width:var(--measure);overflow-wrap:break-word;}
+a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:2px;text-decoration-color:#aed3cb;
+ overflow-wrap:break-word;}
 a:hover{text-decoration-color:var(--accent);}
 strong{color:#1b1f23;font-weight:700;}
 em{color:#39414a;}
 a[id^="exam-"]{display:block;scroll-margin-top:16px;}
 p.examsub{font-family:var(--font-head);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
  color:var(--accent);font-weight:600;margin:.7em 0 0;max-width:none;}
-/* MCQ option cards */
 .opts{list-style:none;margin:.4em 0 .2em;padding:0;display:flex;flex-direction:column;gap:8px;max-width:var(--measure);}
 .opts .opt{display:flex;align-items:baseline;gap:12px;padding:10px 15px;border:1px solid var(--rule);
  border-radius:10px;background:#fffdf7;}
 .opts .optk{font-family:var(--font-head);font-weight:700;font-size:.8rem;color:var(--ink-soft);text-transform:lowercase;
  background:#edf1ee;border:1px solid #dde4e0;border-radius:6px;width:1.85em;height:1.85em;flex:0 0 auto;
  display:inline-flex;align-items:center;justify-content:center;align-self:center;}
-.opts .optt{flex:1 1 auto;line-height:1.5;}
+.opts .optt{flex:1 1 auto;line-height:1.5;overflow-wrap:break-word;min-width:0;}
 .opts .opt.is-correct{background:var(--ans-bg);border-color:var(--ans-bar);}
 .opts .opt.is-correct .optk{background:var(--ans-bar);color:#fff;border-color:var(--ans-bar);}
 .opts .opt.is-correct .optt{font-weight:600;color:#184a2d;}
 .opts .optck{font-family:var(--font-head);font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
  color:var(--ans);margin-left:auto;flex:0 0 auto;white-space:nowrap;align-self:center;}
 p.answer{background:var(--ans-bg);border:1px solid var(--ans-bd);border-left:4px solid var(--ans-bar);
- border-radius:0 11px 11px 0;padding:14px 19px;margin:1.05em 0;max-width:none;font-size:1.02em;}
+ border-radius:0 11px 11px 0;padding:14px 19px;margin:1.05em 0;max-width:none;font-size:1.02em;overflow-wrap:break-word;}
 .lbl{font-family:var(--font-head);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
  padding:3px 9px;border-radius:5px;margin-right:11px;vertical-align:.14em;white-space:nowrap;}
 .lbl-ans{background:var(--ans-bar);color:#fff;}
 .lbl-exp{background:var(--accent-tint);color:var(--accent-deep);}
 p.explabel{margin:1.5em 0 .3em;max-width:none;}
 p.source{font-family:var(--font-head);font-size:.81rem;color:var(--ink-faint);max-width:none;
- margin:1.1em 0 .3em;padding-top:.75em;border-top:1px dashed var(--rule);}
+ margin:1.1em 0 .3em;padding-top:.75em;border-top:1px dashed var(--rule);overflow-wrap:break-word;}
 p.source em{color:var(--ink-faint);}
 ul,ol{max-width:var(--measure);padding-left:1.45em;margin:.6em 0 1.05em;}
-li{margin:.34em 0;}
+li{margin:.34em 0;overflow-wrap:break-word;}
 li::marker{color:var(--accent);}
 code{font-family:var(--font-mono);font-size:.84em;background:#eaf1ee;border:1px solid #d7e4df;
- border-radius:5px;padding:.5px 5px;color:#0b3a34;}
+ border-radius:5px;padding:.5px 5px;color:#0b3a34;overflow-wrap:anywhere;word-break:break-word;}
 pre{font-family:var(--font-mono);background:var(--code-bg);color:var(--code-ink);padding:16px 18px;
- border-radius:12px;overflow-x:auto;margin:1.05em 0;line-height:1.55;border-top:3px solid var(--accent);
- box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 16px 34px -24px rgba(0,0,0,.55);}
-pre code{background:none;border:none;color:inherit;padding:0;font-size:.8rem;}
-.tablewrap{overflow-x:auto;margin:1.15em 0;}
+ border-radius:12px;overflow-x:auto;max-width:100%;margin:1.05em 0;line-height:1.55;border-top:3px solid var(--accent);
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 16px 34px -24px rgba(0,0,0,.55);-webkit-overflow-scrolling:touch;}
+pre code{background:none;border:none;color:inherit;padding:0;font-size:.8rem;overflow-wrap:normal;word-break:normal;}
+.tablewrap{overflow-x:auto;max-width:100%;margin:1.15em 0;-webkit-overflow-scrolling:touch;}
 table{border-collapse:separate;border-spacing:0;font-size:.93rem;width:auto;
  border:1px solid var(--rule);border-radius:11px;overflow:hidden;}
 thead th{font-family:var(--font-head);font-size:.81rem;letter-spacing:.02em;background:var(--accent-tint);
@@ -129,18 +134,39 @@ hr{border:none;height:1px;background:var(--rule);margin:2.5em 0;}
 footer{max-width:1210px;margin:0 auto;padding:26px 26px 56px;text-align:center;
  font-family:var(--font-head);font-size:.83rem;color:var(--ink-faint);}
 footer a{color:var(--accent);}
+/* ---------- tablet / mobile ---------- */
 @media (max-width:1000px){
  .sidenav{display:none;}
  .fab{display:flex;}
- .layout{padding:0 14px 56px;}
- .content{padding:30px 22px 46px;border-radius:11px;margin-top:14px;}
+ .layout{display:block;padding:0 0 56px;}
+ .content{padding:26px 18px 46px;border:none;border-radius:0;margin-top:0;box-shadow:none;max-width:100%;}
  body{font-size:17px;}
- h1{font-size:1.92rem;} h2{font-size:1.3rem;padding:15px 17px;}
- h3.qhead{font-size:1.08rem;}
+ h1{font-size:1.82rem;} h2{font-size:1.28rem;padding:14px 16px;border-radius:11px;}
+ h3.qhead{font-size:1.09rem;}
+ h2,h3.qhead,a[id^="exam-"]{scroll-margin-top:62px;}
+ /* sticky mobile exam menu */
+ .mnav{display:block;position:sticky;top:0;z-index:40;border-bottom:1px solid var(--rule);
+  background:rgba(243,239,230,.96);-webkit-backdrop-filter:saturate(1.3) blur(8px);backdrop-filter:saturate(1.3) blur(8px);}
+ .mnav>summary{font-family:var(--font-head);font-weight:700;font-size:.96rem;color:var(--accent-deep);
+  padding:14px 18px;display:flex;align-items:center;}
+ .mnav[open]>summary{border-bottom:1px solid var(--rule);}
+ .mnav-list{display:flex;flex-direction:column;padding:6px 10px 12px;background:var(--surface);}
+ .mnav-list a{font-family:var(--font-head);text-decoration:none;color:var(--ink-soft);font-size:.97rem;
+  padding:13px 12px;border-radius:9px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+ .mnav-list a em{font-style:normal;font-size:.74rem;color:var(--ink-faint);background:var(--accent-tint);
+  padding:2px 9px;border-radius:11px;white-space:nowrap;}
+ .mnav-list a:active{background:var(--accent-tint);color:var(--accent-deep);}
 }
-@media (max-width:520px){ .content{padding:24px 16px 38px;} body{font-size:16.5px;} .opts .opt{flex-wrap:wrap;} }
+@media (max-width:540px){
+ .content{padding:22px 14px 40px;} body{font-size:16.5px;}
+ h1{font-size:1.62rem;} h2{font-size:1.18rem;}
+ .opts .opt{flex-wrap:wrap;gap:8px 10px;}
+ .opts .optck{margin-left:0;width:100%;text-align:left;padding-left:calc(1.85em + 12px);}
+ p.answer{padding:13px 15px;}
+ blockquote{padding:4px 15px;}
+}
 @media print{
- body{background:#fff;font-size:11pt;color:#000;} body::before,#progress,.fab,.sidenav{display:none;}
+ body{background:#fff;font-size:11pt;color:#000;overflow:visible;} body::before,#progress,.fab,.sidenav,.mnav{display:none;}
  .layout{display:block;max-width:none;padding:0;}
  .content{box-shadow:none;border:none;border-radius:0;max-width:none;padding:0;margin:0;}
  h2{color:#000;background:none;border:2px solid var(--accent);box-shadow:none;
@@ -153,6 +179,7 @@ footer a{color:var(--accent);}
 </head>
 <body>
 <div id="progress"></div>
+<details class="mnav"><summary>&#9776;&nbsp;&nbsp;Jump to an exam</summary><nav class="mnav-list"><a href="#exam-linux-23"><span>01&nbsp;&middot;&nbsp;Linux_23</span><em>22&nbsp;Qs</em></a><a href="#exam-linux-24"><span>02&nbsp;&middot;&nbsp;Linux_24</span><em>22&nbsp;Qs</em></a><a href="#exam-linux-25"><span>03&nbsp;&middot;&nbsp;Linux_25</span><em>19&nbsp;Qs</em></a><a href="#exam-final"><span>04&nbsp;&middot;&nbsp;Final Exam</span><em>22&nbsp;Qs</em></a><a href="#exam-sample-1"><span>05&nbsp;&middot;&nbsp;Sample 1</span><em>21&nbsp;Qs</em></a><a href="#exam-sample-2"><span>06&nbsp;&middot;&nbsp;Sample 2</span><em>20&nbsp;Qs</em></a><a href="#top"><span>&#8593;&nbsp; Back to top</span></a></nav></details>
 <div class="layout">
 <aside class="sidenav">
   <div class="brand"><span class="k">CSY441 · EMBEDDED LINUX</span><span class="t">Final Exams — Solved &amp; Explained</span></div>
@@ -1812,6 +1839,8 @@ mtd3: 07abd000 00020000 "Filesystem"</code></pre>
    {rootMargin:'-8% 0px -82% 0px',threshold:0});
   anchors.forEach(function(a){io.observe(a);});
  }
+ var mnav=document.querySelector('.mnav');
+ if(mnav){mnav.addEventListener('click',function(e){var t=e.target.closest('a');if(t){mnav.removeAttribute('open');}});}
 })();
 </script>
 </body>
