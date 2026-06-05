@@ -32,7 +32,12 @@ Total questions: 22
 
 ---
 
-### Q1.1. Choose the correct answer [7 marks, 10 min]. The ___ is the part of the Linux system that is responsible for loading kernel into memory after system reset and firmware initialization. a) Init program  b) Kernel program  c) Bootloader  d) Board firmware
+### Q1.1. Choose the correct answer [7 marks, 10 min]. The ___ is the part of the Linux system that is responsible for loading kernel into memory after system reset and firmware initialization.
+
+- a) Init program
+- b) Kernel program
+- **c) Bootloader** ✅
+- d) Board firmware
 
 **Answer:** c) Bootloader
 
@@ -54,7 +59,12 @@ So the component whose specific responsibility is *loading the kernel into memor
 
 ---
 
-### Q1.2. The root filesystem is mounted to the system through the ____. a) mount command  b) root= kernel option  c) bootloader ROM Code  d) init program
+### Q1.2. The root filesystem is mounted to the system through the ____.
+
+- a) mount command
+- **b) root= kernel option** ✅
+- c) bootloader ROM Code
+- d) init program
 
 **Answer:** b) root= kernel option
 
@@ -71,7 +81,12 @@ Linux solves this by having the **kernel mount the very first filesystem itself*
 
 ---
 
-### Q1.3. In the filesystem hierarchy standard, the _____ directory stores the devices nodes defined for the hardware attached to the system. a) /sys  b) /driver  c) /bin  d) /dev
+### Q1.3. In the filesystem hierarchy standard, the _____ directory stores the devices nodes defined for the hardware attached to the system.
+
+- a) /sys
+- b) /driver
+- c) /bin
+- **d) /dev** ✅
 
 **Answer:** d) /dev
 
@@ -95,7 +110,12 @@ So the directory holding the **device nodes** is **/dev**.
 
 ---
 
-### Q1.4. The system V init program begins reading the ______ file which defines rules to start programs at boot up and stop them at shutdown. a) /conf/init.d  b) /sbin/init  c) /sbin/boot  d) /etc/inittab
+### Q1.4. The system V init program begins reading the ______ file which defines rules to start programs at boot up and stop them at shutdown.
+
+- a) /conf/init.d
+- b) /sbin/init
+- c) /sbin/boot
+- **d) /etc/inittab** ✅
 
 **Answer:** d) /etc/inittab
 
@@ -119,7 +139,12 @@ Note the classic trap: `/sbin/init` is the init *executable itself*, not its con
 
 ---
 
-### Q1.5. In block devices, the minor number identifies the ______ of the device. a) partition  b) device driver  c) interface  d) none of the above
+### Q1.5. In block devices, the minor number identifies the ______ of the device.
+
+- **a) partition** ✅
+- b) device driver
+- c) interface
+- d) none of the above
 
 **Answer:** a) partition
 
@@ -142,7 +167,12 @@ The question specifically says *block devices*, so the minor number = **partitio
 
 ---
 
-### Q1.6. If the system has no MMU, the best C library can be used is _____. a) musl libc  b) libm  c) uClibc-ng  d) glibc
+### Q1.6. If the system has no MMU, the best C library can be used is _____.
+
+- a) musl libc
+- b) libm
+- **c) uClibc-ng** ✅
+- d) glibc
 
 **Answer:** c) uClibc-ng
 
@@ -166,7 +196,12 @@ So for a **no-MMU** system, the best fit is **uClibc-ng**.
 
 ---
 
-### Q1.7. In JFFS2 filesystem, the ____ block contains only valid nodes. a) Free  b) Erased  c) Clean  d) Ful
+### Q1.7. In JFFS2 filesystem, the ____ block contains only valid nodes.
+
+- a) Free
+- b) Erased
+- **c) Clean** ✅
+- d) Ful
 
 **Answer:** c) Clean
 
@@ -555,7 +590,12 @@ Total questions: 22
 
 ---
 
-### Q1.1. The ____ toolchain runs on the different type of system than the target machine. a) cross-platform  b) cross-compiled  c) native  d) normal
+### Q1.1. The ____ toolchain runs on the different type of system than the target machine.
+
+- a) cross-platform
+- **b) cross-compiled** ✅
+- c) native
+- d) normal
 
 **Answer:** **b) cross-compiled**
 
@@ -574,7 +614,12 @@ Why the other options are wrong:
 
 ---
 
-### Q1.2. The bootloader code that setups the memory controller and load the full bootloader into DRAM is called ____ . a) TPL  b) ROM Code  c) SoC  d) SPL
+### Q1.2. The bootloader code that setups the memory controller and load the full bootloader into DRAM is called ____ .
+
+- a) TPL
+- b) ROM Code
+- c) SoC
+- **d) SPL** ✅
 
 **Answer:** **d) SPL** (Secondary Program Loader)
 
@@ -594,7 +639,12 @@ Why the other options are wrong:
 
 ---
 
-### Q1.3. The ____ is a compressed version of the Linux kernel image that is self-extracting, while ____ is an image file that has a U-Boot wrapper. a) zImage, uimage  b) uImage, zImage  c) uImage, cpio  d) zImage, cpio
+### Q1.3. The ____ is a compressed version of the Linux kernel image that is self-extracting, while ____ is an image file that has a U-Boot wrapper.
+
+- **a) zImage, uimage** ✅
+- b) uImage, zImage
+- c) uImage, cpio
+- d) zImage, cpio
 
 **Answer:** **a) zImage, uImage**
 
@@ -615,7 +665,12 @@ Why the other options are wrong:
 
 ---
 
-### Q1.4. The purpose of the ___ and ____ pseudo filesystems is to expose information about processes and kernel driver model to user space, respectively. a) /dev, /proc  b) /proc, /dev  c) /proc, /sysfs  d) /sysfs, /proc
+### Q1.4. The purpose of the ___ and ____ pseudo filesystems is to expose information about processes and kernel driver model to user space, respectively.
+
+- a) /dev, /proc
+- b) /proc, /dev
+- **c) /proc, /sysfs** ✅
+- d) /sysfs, /proc
 
 **Answer:** **c) /proc, /sysfs**
 
@@ -636,7 +691,12 @@ Why the other options are wrong:
 
 ---
 
-### Q1.5. If the mode of an executable owned by root is -rwxr-xr-x and user1 runs it, the executable will run with the privilege of the ____ . a) user1's group  b) root's group  c) user1  d) root
+### Q1.5. If the mode of an executable owned by root is -rwxr-xr-x and user1 runs it, the executable will run with the privilege of the ____ .
+
+- a) user1's group
+- b) root's group
+- **c) user1** ✅
+- d) root
 
 **Answer:** **c) user1**
 
@@ -660,7 +720,12 @@ Why the other options are wrong:
 
 ---
 
-### Q1.6. BusyBox init begins by reading ____ file which defines rules to start programs with their corresponding actions and runlevels, one per line. a) /etc/init  b) /etc/inittab  c) /etc/init.d/rcS  d) /etc/startup
+### Q1.6. BusyBox init begins by reading ____ file which defines rules to start programs with their corresponding actions and runlevels, one per line.
+
+- a) /etc/init
+- **b) /etc/inittab** ✅
+- c) /etc/init.d/rcS
+- d) /etc/startup
 
 **Answer:** **b) /etc/inittab**
 
@@ -678,7 +743,12 @@ Why the other options are wrong:
 
 ---
 
-### Q1.7. The Yocto project component that includes recipes, configuration files, commands that control the building process is called ___ . a) layers  b) OE-Core  c) poky  d) metadata
+### Q1.7. The Yocto project component that includes recipes, configuration files, commands that control the building process is called ___ .
+
+- a) layers
+- b) OE-Core
+- c) poky
+- **d) metadata** ✅
 
 **Answer:** **d) metadata**
 
@@ -694,7 +764,12 @@ Why the other options are wrong:
 
 ---
 
-### Q1.8. In block devices, the minor number identifies the ______ of the device. a) partition  b) interface  c) device driver  d) none of the above
+### Q1.8. In block devices, the minor number identifies the ______ of the device.
+
+- **a) partition** ✅
+- b) interface
+- c) device driver
+- d) none of the above
 
 **Answer:** **a) partition**
 
@@ -714,7 +789,12 @@ Why the other options are wrong:
 
 ---
 
-### Q1.9. To read NAND flash, the _____ tool should be used to skip bad blocks. a) cp  b) nanddump  c) nandwrite  d) nandcp
+### Q1.9. To read NAND flash, the _____ tool should be used to skip bad blocks.
+
+- a) cp
+- **b) nanddump** ✅
+- c) nandwrite
+- d) nandcp
 
 **Answer:** **b) nanddump**
 
@@ -732,7 +812,12 @@ Why the other options are wrong:
 
 ---
 
-### Q1.10. The ___ is a collection of projects and tools, used to bootstrap a new distribution based on the Yocto Project. a) metadata  b) poky  c) BitBake  d) OE-Core
+### Q1.10. The ___ is a collection of projects and tools, used to bootstrap a new distribution based on the Yocto Project.
+
+- a) metadata
+- **b) poky** ✅
+- c) BitBake
+- d) OE-Core
 
 **Answer:** **b) poky**
 
@@ -1088,7 +1173,12 @@ Total questions: 19
 
 ---
 
-### Q1.1. If the system has no MMU, the best C library can be used is ____ . a) musl libc  b) libm  c) uClibc-ng  d) glibc
+### Q1.1. If the system has no MMU, the best C library can be used is ____ .
+
+- a) musl libc
+- b) libm
+- **c) uClibc-ng** ✅
+- d) glibc
 
 **Answer:** c) uClibc-ng
 
@@ -1113,7 +1203,12 @@ Why the others are wrong:
 
 ---
 
-### Q1.2. The linux command that lists files including hidden items is ____ . a) ls -l  b) ls -v  c) ls -h  d) ls -a
+### Q1.2. The linux command that lists files including hidden items is ____ .
+
+- a) ls -l
+- b) ls -v
+- c) ls -h
+- **d) ls -a** ✅
 
 **Answer:** d) ls -a
 
@@ -1137,7 +1232,12 @@ Why the others are wrong:
 
 ---
 
-### Q1.3. The bootloader code stored in DRAM and loads the kernel image and device tree into DRAW is called ____ . a) ROM Code  b) TPL  c) SPL  d) SoC
+### Q1.3. The bootloader code stored in DRAM and loads the kernel image and device tree into DRAW is called ____ .
+
+- a) ROM Code
+- **b) TPL** ✅
+- c) SPL
+- d) SoC
 
 **Answer:** b) TPL
 
@@ -1161,7 +1261,12 @@ Why the others are wrong:
 
 ---
 
-### Q1.4. To define a config option that can be compiled as a kernel module, it should be defined as ____ option type. a) int  b) tristate  c) mod  d) bool
+### Q1.4. To define a config option that can be compiled as a kernel module, it should be defined as ____ option type.
+
+- a) int
+- **b) tristate** ✅
+- c) mod
+- d) bool
 
 **Answer:** b) tristate
 
@@ -1184,7 +1289,12 @@ Why the others are wrong:
 
 ---
 
-### Q1.5. In a really minimal root filesystem, two nodes are needed to boot with BusyBox: _____. a) console and null  b) console and urandom  c) console and tty  d) null and urandom
+### Q1.5. In a really minimal root filesystem, two nodes are needed to boot with BusyBox: _____.
+
+- **a) console and null** ✅
+- b) console and urandom
+- c) console and tty
+- d) null and urandom
 
 **Answer:** a) console and null
 
@@ -1206,7 +1316,12 @@ Why the others are wrong (all involve a node that, while useful, is *not* requir
 
 ---
 
-### Q1.6. In BusyBox init, shell commands that need to be performed at boot time should be placed in ______ file. a) /etc/init  b) /etc/startup  c) /etc/inittab  d) /etc/init.d/rcS
+### Q1.6. In BusyBox init, shell commands that need to be performed at boot time should be placed in ______ file.
+
+- a) /etc/init
+- b) /etc/startup
+- c) /etc/inittab
+- **d) /etc/init.d/rcS** ✅
 
 **Answer:** d) /etc/init.d/rcS
 
@@ -1229,7 +1344,12 @@ Why the others are wrong:
 
 ---
 
-### Q1.7. In a character device driver, the major number maps the device node to a particular _____, while the minor number tells which ____ is being accessed of this device. a) device class, instance  b) interface, partition  c) device driver, partition  d) device class, driver
+### Q1.7. In a character device driver, the major number maps the device node to a particular _____, while the minor number tells which ____ is being accessed of this device.
+
+- **a) device class, instance** ✅
+- b) interface, partition
+- c) device driver, partition
+- d) device class, driver
 
 **Answer:** a) device class, instance
 
@@ -1253,7 +1373,12 @@ Why the others are wrong:
 
 ---
 
-### Q1.8. In buildroot source tree, the ____ directory contains a set of predefined configurations, similar to the concept of defconfig in the kernel. a) system  b) configs  c) package  d) defconfig
+### Q1.8. In buildroot source tree, the ____ directory contains a set of predefined configurations, similar to the concept of defconfig in the kernel.
+
+- a) system
+- **b) configs** ✅
+- c) package
+- d) defconfig
 
 **Answer:** b) configs
 
@@ -1273,7 +1398,12 @@ Why the others are wrong:
 
 ---
 
-### Q1.9. For a NAND flash of 4K page, the OOB area is ____ bytes per page. a) 16  b) 64  c) 32  d) 128
+### Q1.9. For a NAND flash of 4K page, the OOB area is ____ bytes per page.
+
+- a) 16
+- b) 64
+- c) 32
+- **d) 128** ✅
 
 **Answer:** d) 128
 
@@ -1300,7 +1430,12 @@ Why the others are wrong:
 
 ---
 
-### Q1.10. The Yocto project component that contains a list of settings and tasks for building packages is called ___ . a) layers  b) Recipes  c) Configuration Files  d) metadata
+### Q1.10. The Yocto project component that contains a list of settings and tasks for building packages is called ___ .
+
+- a) layers
+- **b) Recipes** ✅
+- c) Configuration Files
+- d) metadata
 
 **Answer:** b) Recipes
 
@@ -1318,7 +1453,12 @@ Why the others are wrong:
 
 ---
 
-### Q1.11. In device tree, the ___ property is that used by the operating system to decide which device driver to bind to a device. a) node  b) ranges  c) reg  d) compatible
+### Q1.11. In device tree, the ___ property is that used by the operating system to decide which device driver to bind to a device.
+
+- a) node
+- b) ranges
+- c) reg
+- **d) compatible** ✅
 
 **Answer:** d) compatible
 
@@ -1611,7 +1751,12 @@ Total questions: 22
 
 ---
 
-### Q1.1. Choose the correct answer [7 marks, 10 min]. The ___ is the part of the Linux system that is responsible for loading kernel into memory after system reset and firmware initialization. a) Init program  b) Kernel program  c) Bootloader  d) Board firmware
+### Q1.1. Choose the correct answer [7 marks, 10 min]. The ___ is the part of the Linux system that is responsible for loading kernel into memory after system reset and firmware initialization.
+
+- a) Init program
+- b) Kernel program
+- **c) Bootloader** ✅
+- d) Board firmware
 
 **Answer:** c) Bootloader
 
@@ -1633,7 +1778,12 @@ So the component whose specific responsibility is *loading the kernel into memor
 
 ---
 
-### Q1.2. The root filesystem is mounted to the system through the ____. a) mount command  b) root= kernel option  c) bootloader ROM Code  d) init program
+### Q1.2. The root filesystem is mounted to the system through the ____.
+
+- a) mount command
+- **b) root= kernel option** ✅
+- c) bootloader ROM Code
+- d) init program
 
 **Answer:** b) root= kernel option
 
@@ -1650,7 +1800,12 @@ Linux solves this by having the **kernel mount the very first filesystem itself*
 
 ---
 
-### Q1.3. In the filesystem hierarchy standard, the _____ directory stores the devices nodes defined for the hardware attached to the system. a) /sys  b) /driver  c) /bin  d) /dev
+### Q1.3. In the filesystem hierarchy standard, the _____ directory stores the devices nodes defined for the hardware attached to the system.
+
+- a) /sys
+- b) /driver
+- c) /bin
+- **d) /dev** ✅
 
 **Answer:** d) /dev
 
@@ -1674,7 +1829,12 @@ So the directory holding the **device nodes** is **/dev**.
 
 ---
 
-### Q1.4. The system V init program begins reading the ______ file which defines rules to start programs at boot up and stop them at shutdown. a) /conf/init.d  b) /sbin/init  c) /sbin/boot  d) /etc/inittab
+### Q1.4. The system V init program begins reading the ______ file which defines rules to start programs at boot up and stop them at shutdown.
+
+- a) /conf/init.d
+- b) /sbin/init
+- c) /sbin/boot
+- **d) /etc/inittab** ✅
 
 **Answer:** d) /etc/inittab
 
@@ -1698,7 +1858,12 @@ Note the classic trap: `/sbin/init` is the init *executable itself*, not its con
 
 ---
 
-### Q1.5. In block devices, the minor number identifies the ______ of the device. a) partition  b) device driver  c) interface  d) none of the above
+### Q1.5. In block devices, the minor number identifies the ______ of the device.
+
+- **a) partition** ✅
+- b) device driver
+- c) interface
+- d) none of the above
 
 **Answer:** a) partition
 
@@ -1721,7 +1886,12 @@ The question specifically says *block devices*, so the minor number = **partitio
 
 ---
 
-### Q1.6. If the system has no MMU, the best C library can be used is _____. a) musl libc  b) libm  c) uClibc-ng  d) glibc
+### Q1.6. If the system has no MMU, the best C library can be used is _____.
+
+- a) musl libc
+- b) libm
+- **c) uClibc-ng** ✅
+- d) glibc
 
 **Answer:** c) uClibc-ng
 
@@ -1745,7 +1915,12 @@ So for a **no-MMU** system, the best fit is **uClibc-ng**.
 
 ---
 
-### Q1.7. In JFFS2 filesystem, the ____ block contains only valid nodes. a) Free  b) Erased  c) Clean  d) Ful
+### Q1.7. In JFFS2 filesystem, the ____ block contains only valid nodes.
+
+- a) Free
+- b) Erased
+- **c) Clean** ✅
+- d) Ful
 
 **Answer:** c) Clean
 
@@ -2134,7 +2309,12 @@ Total questions: 21
 
 ---
 
-### Q1.1. The ___ is the part of the Linux system that is responsible for loading kernel into memory after system reset and firmware initialization. a) Init program  b) Bootloader  c) Kernel loader  d) Board firmware
+### Q1.1. The ___ is the part of the Linux system that is responsible for loading kernel into memory after system reset and firmware initialization.
+
+- a) Init program
+- **b) Bootloader** ✅
+- c) Kernel loader
+- d) Board firmware
 
 **Answer:** b) Bootloader
 
@@ -2156,7 +2336,12 @@ So the component whose specific responsibility is *loading the kernel into memor
 
 ---
 
-### Q1.2. In ______ , both user services and kernel services are kept in the same address space. a) microkernel  b) hybird kernel  c) Monolithic kernel  d) Device drivers
+### Q1.2. In ______ , both user services and kernel services are kept in the same address space.
+
+- a) microkernel
+- b) hybird kernel
+- **c) Monolithic kernel** ✅
+- d) Device drivers
 
 **Answer:** c) Monolithic kernel
 
@@ -2176,7 +2361,12 @@ The phrase "same address space" is the signature of the **monolithic** model.
 
 ---
 
-### Q1.3. In the filesystem hierarchy standard, the _____ directory stores the devices nodes defined for the hardware attached to the system. a) /sys  b) /bin  c) /driver  d) /dev
+### Q1.3. In the filesystem hierarchy standard, the _____ directory stores the devices nodes defined for the hardware attached to the system.
+
+- a) /sys
+- b) /bin
+- c) /driver
+- **d) /dev** ✅
 
 **Answer:** d) /dev
 
@@ -2198,7 +2388,12 @@ So device nodes live in **/dev**.
 
 ---
 
-### Q1.4. The system V init program begins reading the ______ file which defines rules to start programs at boot up and stop them at shutdown. a) /etc/init.d  b) /sbin/boot  c) /sbin/init  d) /etc/inittab
+### Q1.4. The system V init program begins reading the ______ file which defines rules to start programs at boot up and stop them at shutdown.
+
+- a) /etc/init.d
+- b) /sbin/boot
+- c) /sbin/init
+- **d) /etc/inittab** ✅
 
 **Answer:** d) /etc/inittab
 
@@ -2217,7 +2412,12 @@ Note the careful wording: init *reads* **/etc/inittab**; the boot-time *shell co
 
 ---
 
-### Q1.5. In block devices, the minor number identifies the ______ of the device. a) partition  b) interface  c) device driver  d) none of the above
+### Q1.5. In block devices, the minor number identifies the ______ of the device.
+
+- **a) partition** ✅
+- b) interface
+- c) device driver
+- d) none of the above
 
 **Answer:** a) partition
 
@@ -2239,7 +2439,12 @@ For **block devices** (mass storage: SD cards, eMMC, disks), the driver typicall
 
 ---
 
-### Q1.6. When writing a custom character driver, the supported functions are filled in a file_operations struct and passed to the ______ function. a) device_create  b) register_chrdev  c) class_create  d) module_init
+### Q1.6. When writing a custom character driver, the supported functions are filled in a file_operations struct and passed to the ______ function.
+
+- a) device_create
+- **b) register_chrdev** ✅
+- c) class_create
+- d) module_init
 
 **Answer:** b) register_chrdev
 
@@ -2266,7 +2471,12 @@ It then hands this table to the kernel by calling **`register_chrdev(major, name
 
 ---
 
-### Q1.7. The _____ is a build system oriented towards building firmware for wireless routers. a) OpenEmbedded  b) Buildroot  c) OpenWrt  d) Yocto project
+### Q1.7. The _____ is a build system oriented towards building firmware for wireless routers.
+
+- a) OpenEmbedded
+- b) Buildroot
+- **c) OpenWrt** ✅
+- d) Yocto project
 
 **Answer:** c) OpenWrt
 
@@ -2285,7 +2495,12 @@ There are several embedded-Linux **build systems** — tools that compile a cros
 
 ---
 
-### Q1.8. In MTD, we have to use ____ function to read nand flash and skip bad blocks. a) nanddump  b) cp  c) nandread  d) flashread
+### Q1.8. In MTD, we have to use ____ function to read nand flash and skip bad blocks.
+
+- **a) nanddump** ✅
+- b) cp
+- c) nandread
+- d) flashread
 
 **Answer:** a) nanddump
 
@@ -2670,7 +2885,12 @@ Total questions: 20
 
 ---
 
-### Q1.1. The ____ is a compressed version of the Linux kernel image that is self-extracting, while ____ is an image file that has a U-Boot wrapper. a) zImage, uimage  b) uImage, zImage  c) uImage, cpio  d) zImage, cpio
+### Q1.1. The ____ is a compressed version of the Linux kernel image that is self-extracting, while ____ is an image file that has a U-Boot wrapper.
+
+- **a) zImage, uimage** ✅
+- b) uImage, zImage
+- c) uImage, cpio
+- d) zImage, cpio
 
 **Answer:** a) zImage, uimage
 
@@ -2690,7 +2910,12 @@ The slide deck capitalises them `zImage` / `uImage`; option (a) writes the secon
 
 ---
 
-### Q1.2. The root filesystem is mounted to the system through the ____. a) mount command  b) bootloader ROM Code  c) root= kernel option  d) init program
+### Q1.2. The root filesystem is mounted to the system through the ____.
+
+- a) mount command
+- b) bootloader ROM Code
+- **c) root= kernel option** ✅
+- d) init program
 
 **Answer:** c) root= kernel option
 
@@ -2707,7 +2932,12 @@ Linux solves this by making the **kernel mount the very first filesystem itself*
 
 ---
 
-### Q1.3. If the mode of an executable owned by root is -rwsr-xr-x and user1 runs it, the executable will run with the privilege of the ____ . a) user1's group  b) root's group  c) user1  d) root
+### Q1.3. If the mode of an executable owned by root is -rwsr-xr-x and user1 runs it, the executable will run with the privilege of the ____ .
+
+- a) user1's group
+- b) root's group
+- c) user1
+- **d) root** ✅
 
 **Answer:** d) root
 
@@ -2728,7 +2958,12 @@ Normally a program runs with the **effective UID of whoever launched it** (so if
 
 ---
 
-### Q1.4. BusyBox init begins by reading ____ file which defines rules to start programs with their corresponding actions and runlevels, one per line. a) /etc/init  b) /etc/inittab  c) /etc/init.d/rcS  d) /etc/startup
+### Q1.4. BusyBox init begins by reading ____ file which defines rules to start programs with their corresponding actions and runlevels, one per line.
+
+- a) /etc/init
+- **b) /etc/inittab** ✅
+- c) /etc/init.d/rcS
+- d) /etc/startup
 
 **Answer:** b) /etc/inittab
 
@@ -2745,7 +2980,12 @@ The trap on this family of questions is `/etc/init.d/rcS`: that is the **script*
 
 ---
 
-### Q1.5. The Yocto project component that contains settings and tasks for building packages is called ___ . a) recipes  b) layers  c) configuration Files  d) metadata
+### Q1.5. The Yocto project component that contains settings and tasks for building packages is called ___ .
+
+- **a) recipes** ✅
+- b) layers
+- c) configuration Files
+- d) metadata
 
 **Answer:** a) recipes
 
@@ -2765,7 +3005,12 @@ The Yocto Project builds an entire Linux distribution from text descriptions. It
 
 ---
 
-### Q1.6. In JFFS2 filesystem, there is one block receiving updates at a time which is called the ___ block. a) Update  b) Write  c) Active  d) Open
+### Q1.6. In JFFS2 filesystem, there is one block receiving updates at a time which is called the ___ block.
+
+- a) Update
+- b) Write
+- c) Active
+- **d) Open** ✅
 
 **Answer:** d) Open
 
@@ -2787,7 +3032,12 @@ So "one block receiving updates at a time" is the **open** block. A bonus conseq
 
 ---
 
-### Q1.7. To write to NAND flash, the _____ tool should be used. a) cp  b) nandwrite  c) nanddump  d) nandcp
+### Q1.7. To write to NAND flash, the _____ tool should be used.
+
+- a) cp
+- **b) nandwrite** ✅
+- c) nanddump
+- d) nandcp
 
 **Answer:** b) nandwrite
 
